@@ -16,7 +16,7 @@ N, n, k = 100, 10, 8
 print 1 - minSuccessFraction(k, n, N, confidence=0.95)
 ```
 
-The outcome is a worrisome upper limit of 45%. That's substantially larger than the naive estimate of 1 - k/n = 20%. The discrepancy stems from the uncertainty of having tested only 10 eggs, which leave 90 untested, and our requirement of a 95% confidence level. Still, I wouldn't use these eggs... 
+The outcome is a worrisome upper limit of 46%. That's substantially larger than the naive estimate of 1 - k/n = 20%. The discrepancy stems from the uncertainty of having tested only 10 eggs, which leave 90 untested, and our requirement of a 95% confidence level. Still, I wouldn't use these eggs... 
 
 Let's say from the n=10 tests you've done, all are OK, i.e. n=k=10. Then, the maximum contamination is below 22% at 95% confidence. Somewhat better. How many eggs would you need to test (as OK) so that this limit is below, say, 5%?
 
