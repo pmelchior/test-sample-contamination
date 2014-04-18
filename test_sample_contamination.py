@@ -91,19 +91,19 @@ def minSuccessFraction(k, n, N, confidence=0.95, accuracy=0.01):
         s -= accuracy
     return 0
 
-def minTestLength(N, s_limit=0.95, confidence=0.95, accuracy=0.01):
+def minTestLength(N, s_min=0.95, confidence=0.95, accuracy=0.01):
     """Minimum number of tests n to achive a lower limit in the success fraction
-    of at least s_limit.
+    of at least s_min.
 
     This test assumes that all test samples are successful, i.e. k=n, and thus
-    estimates how many tests are needed to suppress the uncertainty of the 
-    whole sample success rate below the threshold 1-s_limit.
+    estimates how many tests are needed to determine the lower bound on the
+    whole sample success rate at the given level of confidence.
     
     Returns -1 if the sample N is not large enough to determine the success rate
-    with a certainty of s_limit, before all N samples are tested.
+    of at least s_min before all N samples are tested.
     """
     for n in xrange(1,N):
-        if minSuccessFraction(n, n, N, confidence=confidence, accuracy=accuracy) >= s_limit:
+        if minSuccessFraction(n, n, N, confidence=confidence, accuracy=accuracy) >= s_min:
             return n
     return -1
         
