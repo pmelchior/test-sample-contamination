@@ -82,7 +82,7 @@ def minSuccessFraction(k, n, N, confidence=0.95, accuracy=0.01):
     """
     # brute-force implementation
     # could be improved by a narrowing down the likely region of s
-    # and by only using s that lead to changes in probKSuccessFrac,
+    # and by only using values of s that lead to changes in probKGivenS.
     s = 1 - accuracy
     pK = probK(k, n, N)
     while s > 0:
